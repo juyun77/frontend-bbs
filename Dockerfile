@@ -8,8 +8,8 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
 # ...
 
-# npm WARN deprecated 이슈를 제거하려면 최신 버전으로 업그레이드
-RUN npm install -g npm@latest
+
+RUN npm install -g npm@6.14.4
 
 # 패키지 설치
 RUN npm install
