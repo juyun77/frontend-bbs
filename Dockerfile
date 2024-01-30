@@ -13,7 +13,7 @@ RUN npm install
 # 변경: npm run build 스크립트 실행 권한 설정
 RUN chmod +x ./node_modules/.bin/react-scripts
 
-COPY . /usr/src/app
+# 패키지 설치 후에 build 스크립트를 실행
 RUN npm run build
 
 # Stage 2: Production Stage
