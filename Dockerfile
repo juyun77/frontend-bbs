@@ -1,5 +1,5 @@
 # Stage 1: Build Stage
-FROM node:12.16.2 as builder
+FROM node:18.16.0 as builder
 
 # 작업 폴더를 만들고 npm 설치
 RUN mkdir /usr/src/app
@@ -9,7 +9,7 @@ COPY package.json /usr/src/app/package.json
 # ...
 
 
-RUN npm install -g npm@6.14.4
+RUN npm install -g npm@8.19.4
 
 # 패키지 설치
 RUN npm install
