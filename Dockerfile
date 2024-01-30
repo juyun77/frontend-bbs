@@ -14,7 +14,7 @@ RUN npm install react-scripts --save
 RUN chmod +x ./node_modules/.bin/react-scripts
 
 # 패키지 설치 후에 build 스크립트를 실행
-RUN sudo npm run build
+RUN npm run build
 
 # Stage 2: Production Stage
 FROM nginx:1.19
