@@ -44,7 +44,7 @@ WORKDIR /usr/src/app
 
 # package.json 복사 및 의존성 설치
 COPY package.json .
-COPY package-lock.json .
+
 RUN npm install
 
 # 소스 코드 복사 및 빌드
