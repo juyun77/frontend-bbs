@@ -5,12 +5,12 @@ FROM node:14 as builder
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
-COPY package.json /usr/src/app/package.json
 
 # 패키지 설치
 RUN npm install react-scripts --save
 
-RUN chmod -R 777 /usr/src/app
+# 프로젝트 소스 코드를 복사
+COPY . /usr/src/app
 
 # 변경: npm run build 스크립트 실행 권한 설정
 RUN chmod +x ./node_modules/.bin/react-scripts
