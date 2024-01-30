@@ -10,6 +10,9 @@ COPY package.json /usr/src/app/package.json
 # 패키지 설치
 RUN npm install
 
+# react-scripts 설치
+RUN npm install react-scripts -g
+
 # 변경: npm run build 스크립트 실행 권한 설정
 RUN chmod +x ./node_modules/.bin/react-scripts
 
