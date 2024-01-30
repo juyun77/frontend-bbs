@@ -9,7 +9,7 @@ COPY package.json /usr/src/app/package.json
 # ...
 
 
-RUN npm install -g npm@8.19.4
+#RUN npm install -g npm@8.19.4
 
 # 패키지 설치
 RUN npm install
