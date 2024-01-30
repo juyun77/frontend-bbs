@@ -6,7 +6,14 @@ RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
 COPY package.json /usr/src/app/package.json
+# ...
+
+# npm WARN deprecated 이슈를 제거하려면 최신 버전으로 업그레이드
+RUN npm install -g npm@latest
+
+# 패키지 설치
 RUN npm install
+
 RUN cat /usr/src/app/npm-debug.log 
 COPY . /usr/src/app
 RUN npm run build
