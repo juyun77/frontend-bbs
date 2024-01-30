@@ -11,7 +11,7 @@ COPY package.json /usr/src/app/package.json
 RUN npm install
 
 # 변경: npm run build 스크립트 실행 권한 설정
-RUN chmod +x ./node_modules/.bin/react-scripts
+RUN chmod +x /usr/src/app/node_modules/.bin/react-scripts
 
 # 프로젝트의 public 폴더를 /usr/src/app/public로 복사
 COPY public /usr/src/app/public
