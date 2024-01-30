@@ -2,7 +2,7 @@ name: Build For app
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -10,10 +10,8 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
-       
-        
-
-
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -70,8 +68,6 @@ jobs:
       - name: Image Tag Change
         run: |
           yq e --inplace '.spec.template.spec.containers[0].image |= "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/testfront:${{ env.IMAGE_TAG }}"' manifest2/02-deployfront.yaml
-
-
 
       - name: Create Pull Request
         id: cpr
