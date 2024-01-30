@@ -14,7 +14,6 @@ RUN npm install -g npm@6.14.4
 # 패키지 설치
 RUN npm install
 
-RUN cat /usr/src/app/npm-debug.log 
 COPY . /usr/src/app
 RUN npm run build
 
