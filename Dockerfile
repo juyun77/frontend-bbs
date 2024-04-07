@@ -12,7 +12,7 @@ RUN npm install react-scripts --save
 # 프로젝트 소스 코드를 복사
 COPY . /usr/src/app
 
-# 변경: npm run build 스크립트 실행 권한 설정
+# npm run build 스크립트 실행 권한 설정
 RUN chmod +x ./node_modules/.bin/react-scripts
 
 # 패키지 설치 후에 build 스크립트를 실행

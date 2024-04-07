@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
    
 
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -58,7 +58,7 @@ jobs:
 
     steps:
       - name: Clone Deploy repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: ${{ env.GIT_REPO }}
           ref: 'main'
@@ -66,7 +66,7 @@ jobs:
       
       - name: Image Tag Change
         run: |
-          yq e --inplace '.spec.template.spec.containers[0].image |= "457017831224.dkr.ecr.ap-northeast-2.amazonaws.com/testfront:${{ env.IMAGE_TAG }}"' manifest2/02-deployfront.yaml
+          yq e --inplace '.spec.template.spec.containers[0].image |= "252340876984.dkr.ecr.ap-northeast-2.amazonaws.com/bbs-frontend:${{ env.IMAGE_TAG }}"' manifest2/02-deployfront.yaml
 
       - name: Create Pull Request
         id: cpr
