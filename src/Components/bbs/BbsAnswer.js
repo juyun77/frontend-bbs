@@ -36,7 +36,7 @@ function BbsAnswer() {
 			content: content
 		}
 		
-		await axios.post(`http://localhost:8080/bbs/${parentSeq}/answer`, req, {headers: headers})
+		await axios.post(`http://api.juyun.link/bbs/${parentSeq}/answer`, req, {headers: headers})
 		.then((resp) => {
 			console.log("[BbsAnswer.js] createBbsAnswer() success :D");
 			console.log(resp.data);

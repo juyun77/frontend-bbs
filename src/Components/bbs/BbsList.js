@@ -25,7 +25,7 @@ function BbsList() {
 	/* [GET /bbs]: 게시글 목록 */
 	const getBbsList = async (choice, search, page) => {
 
-		await axios.get("http://localhost:8080/bbs", { params: { "choice": choice, "search": search, "page": page } })
+		await axios.get("http://api.juyun.link/bbs", { params: { "choice": choice, "search": search, "page": page } })
 			.then((resp) => {
 				console.log("[BbsList.js] useEffect() success :D");
 				console.log(resp.data);

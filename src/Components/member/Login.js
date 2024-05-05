@@ -31,7 +31,7 @@ function Login() {
 			pwd: pwd
 		}
 
-		await axios.post("http://localhost:8080/user/login", req)
+		await axios.post("http://api.juyun.link/user/login", req)
 		.then((resp) => {
 			console.log("[Login.js] login() success :D");
 			console.log(resp.data);

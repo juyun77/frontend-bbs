@@ -19,7 +19,7 @@ function BbsDetail() {
 
 	const getBbsDetail = async () => {
 
-		await axios.get(`http://localhost:8080/bbs/${seq}`, {params: {readerId: auth ? auth : ""}})
+		await axios.get(`http://api.juyun.link/bbs/${seq}`, {params: {readerId: auth ? auth : ""}})
 		.then((resp) => {
 			console.log("[BbsDetail.js] getBbsDetail() success :D");
 			console.log(resp.data);
@@ -35,7 +35,7 @@ function BbsDetail() {
 
 	const deleteBbs = async () => {
 
-		await axios.delete(`http://localhost:8080/bbs/${seq}`)
+		await axios.delete(`http://api.juyun.link/bbs/${seq}`)
 		.then((resp) => {
 			console.log("[BbsDetail.js] deleteBbs() success :D");
 			console.log(resp.data);

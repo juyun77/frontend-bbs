@@ -37,7 +37,7 @@ function Join() {
 	/* 아이디 중복 체크 */
 	const checkIdDuplicate = async () => {
 
-		await axios.get("http://localhost:8080/user", { params: { id: id } })
+		await axios.get("http://api.juyun.link/user", { params: { id: id } })
 			.then((resp) => {
 				console.log("[Join.js] checkIdDuplicate() success :D");
 				console.log(resp.data);
@@ -70,7 +70,7 @@ function Join() {
 			email: email
 		}
 
-		await axios.post("http://localhost:8080/user/join", req)
+		await axios.post("http://api.juyun.link/user/join", req)
 			.then((resp) => {
 				console.log("[Join.js] join() success :D");
 				console.log(resp.data);

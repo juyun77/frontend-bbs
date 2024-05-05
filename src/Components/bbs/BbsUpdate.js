@@ -33,7 +33,7 @@ function BbsUpdate() {
 			content: content
 		}
 
-		await axios.patch(`http://localhost:8080/bbs/${bbs.seq}`, req, {headers: headers})
+		await axios.patch(`http://api.juyun.link/bbs/${bbs.seq}`, req, {headers: headers})
 		.then((resp) => {
 			console.log("[BbsUpdate.js] updateBbs() success :D");
 			console.log(resp.data);
